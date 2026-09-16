@@ -20,12 +20,29 @@ export const ContextProvider = ({
 }) => {
   //react component name like ContextProvider must be capitalized
   const [scroll, setScroll] = useState<number>(0);
+  const [scrollingDown, setScrollingDown] = useState(false);
   const [sectionHash, setSectionHash] = useState<string>("")
+
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScroll(currentScrollY);
+      setScrollingDown(currentScrollY > 100 && currentScrollY > previousScrollY);
+      previousScrollY = currentScrollY;
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   return (
     <Context.Provider
       value={{
         scroll,
+        scrollingDown,
         setScroll,
         sectionHash,
         setSectionHash

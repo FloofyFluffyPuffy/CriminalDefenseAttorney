@@ -1,8 +1,10 @@
 import HomeHero from "@/components/Home/HomeHero";
+import HomeIntro from "@/components/Home/HomeIntro";
 export default function Home() {
   return (
-      <main className="flex flex-1 items-center justify-center">
+      <main>
         <HomeHero/>
+        <HomeIntro/>
       </main>
   );
 }

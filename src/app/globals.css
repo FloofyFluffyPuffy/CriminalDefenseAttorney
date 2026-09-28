@@ -24,6 +24,127 @@ body {
   background-position: center;
 }
 
+.HomePractices {
+  background-image: url('/assets/flippedwalking.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4rem max(5.3vw, 2rem);
+  color: #001541;
+}
+
+.HomePracticesContent {
+  width: min(100%, 660px);
+}
+
+.HomePracticesContent h1 {
+  margin: 0 0 1.75rem;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.HomePracticesContent p {
+  margin: 0 0 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.PracticeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.PracticeItem {
+  display: flex;
+  min-height: 2.625rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  background: #d6232e;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.PracticeItem:hover {
+  background: #001541;
+}
+
+.PracticeItem:focus-visible {
+  outline: 3px solid #001541;
+  outline-offset: 3px;
+}
+
+.PracticeAreaPage {
+  min-height: 100svh;
+  padding: 5rem max(5.3vw, 2rem);
+  background: #f2dcc6;
+  color: #001541;
+}
+
+.PracticeAreaPageContent {
+  width: min(100%, 780px);
+  margin: 0 auto;
+}
+
+.PracticeAreaPage a {
+  color: #d6232e;
+}
+
+.PracticeAreaPage h1 {
+  margin: 2rem 0 1.5rem;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.PracticeAreaPage p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .HomePractices {
+    background-image:
+      linear-gradient(rgba(242, 220, 198, 0.84), rgba(242, 220, 198, 0.84)),
+      url('/assets/flippedwalking.png');
+    background-position: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .HomePracticesContent h1 {
+    margin-bottom: 1.25rem;
+    font-size: 2.125rem;
+  }
+
+  .PracticeGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .PracticeAreaPage {
+    padding: 3rem 1.5rem;
+  }
+
+  .PracticeAreaPage h1 {
+    font-size: 2.125rem;
+  }
+}
+
 .checkBg {
   /* Primary base navy color */
   background-color: #001541;

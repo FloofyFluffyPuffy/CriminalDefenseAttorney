@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { ContextType } from "../types/types";
+import { ContextType } from "./types/types";
 const Context = createContext<ContextType | null>(null);
 // one thing about create context it actually need a value to create, so either it the type ContextType or at least null
 // (null) mean by default this have no value

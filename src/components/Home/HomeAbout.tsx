@@ -26,7 +26,7 @@ const HomeAbout = () => {
   ];
 
   return (
-    <section aria-labelledby="home-about-heading" className="checkBg px-6 py-12 text-white sm:py-16 lg:px-10">
+    <section id="about" aria-labelledby="home-about-heading" className="checkBg px-6 py-12 text-white sm:py-16 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <h2 id="home-about-heading" className="mb-8 text-center text-2xl font-bold text-white sm:mb-10 sm:text-3xl">
           Are You Charged With a Crime in Oklahoma?

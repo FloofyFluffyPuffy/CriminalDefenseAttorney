@@ -10,7 +10,7 @@ const HomeHero = () => {
           <h1 className='text-6xl text-[#001442] font-bold'>OKLAHOMA CITY</h1>
           <h2 className='text-4xl text-[#001442] font-semibold'>Criminal Defense Lawyer</h2>
           <a 
-            href="" 
+            href="/contact" 
             className='mt-2 inline-flex min-h-11 items-center bg-[#D3222B] px-5 py-2.5 text-[17px] font-semibold text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#001442]'
           >
             SCHEDULE YOUR FREE CONSULTATION

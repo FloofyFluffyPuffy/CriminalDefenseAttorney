@@ -12,7 +12,7 @@ const HomePractices = () => {
         <ul className='PracticeGrid'>
           {practiceAreas.map(({ slug, title }) => (
             <li key={slug}>
-              <Link className='PracticeItem' href={`/practice-areas/${slug}`}>
+              <Link className='PracticeItem' href={`/${slug}`}>
                 {title}
               </Link>
             </li>

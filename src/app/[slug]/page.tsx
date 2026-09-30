@@ -26,7 +26,7 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
         <p>
           Every criminal case depends on its specific allegations, evidence, and circumstances. If you are facing a charge involving {practiceArea.title.toLowerCase()}, get in touch with a defense attorney to discuss your situation and potential next steps.
         </p>
-      </div>
+      </div> 
     </main>
   )
 }

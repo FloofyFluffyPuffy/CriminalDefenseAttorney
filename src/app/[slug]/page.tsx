@@ -22,16 +22,19 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
   return (
     <main className=''>
       <div
-        className="PAHeader h-[50vh] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        className="PAHeader flex h-[60vh] flex-col items-center justify-center gap-6 bg-cover bg-center bg-no-repeat px-6 text-center text-white"
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})` }}
       >
-        {/* Content */}
+        <img src="/assets/mainLogoWhite.svg" alt="Bail Bonds" className="w-full -mt-18 h-54" />
+        <h1 className="max-w-4xl text-2xl font-bold sm:text-4xl">Oklahoma {practiceArea.title} Lawyer</h1>
       </div>
-      <div className='mx-auto w-full'>
-        <h1 className='mt-8 mb-6 text-5xl font-extrabold uppercase leading-[1.05] text-[#001541] sm:text-[3rem]'>{practiceArea.title}</h1>
-        <p className='text-base leading-7 text-[#001541]'>
-          Every criminal case depends on its specific allegations, evidence, and circumstances. If you are facing a charge involving {practiceArea.title.toLowerCase()}, get in touch with a defense attorney to discuss your situation and potential next steps.
-        </p>
+      <div className='PAContent grid grid-cols-3 grid-rows-2 mx-auto w-full'>
+        <div className='PAText bg-amber-200 flex-col col-span-2 h-10'>
+          put a bunch of h1 h2 h3 here and p, disect the paragraph into that
+        </div>
+        <div className='PASide flex flex-col bg-red-200'>
+          so put like a contact form here and some extra image
+        </div>
       </div>
     </main>
   )

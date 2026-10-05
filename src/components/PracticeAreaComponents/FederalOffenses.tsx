@@ -8,23 +8,33 @@ const FederalOffenses = () => {
 
       <h1>Examples of Federal Crimes</h1>
       <p>There are various examples of crimes that may be considered federal crimes. Just some of the most common types of federal charges that we see are as follows:</p>
-      <p>Drug trafficking.</p>
-      <p>Treason.</p>
-      <p>Violations of securities laws.</p>
-      <p>Violations of interstate commerce.</p>
-      <p>Counterfeiting.</p>
-      <p>Piracy.</p>
-      <p>Certain violent crimes.</p>
-      <p>Arrests on federal property.</p>
-      <p>Bank fraud.</p>
-      <p>Kidnapping.</p>
-      <p>Assault of a federal officer.</p>
-      <p>Federal immigration charges.</p>
-      <p>Interfering with a TSA official.</p>
+      <ul>
+        <li>Drug trafficking.</li>
+        <li>Treason.</li>
+        <li>Violations of securities laws.</li>
+        <li>Violations of interstate commerce.</li>
+        <li>Counterfeiting.</li>
+        <li>Piracy.</li>
+        <li>Certain violent crimes.</li>
+        <li>Arrests on federal property.</li>
+        <li>Bank fraud.</li>
+        <li>Kidnapping.</li>
+        <li>Assault of a federal officer.</li>
+        <li>Federal immigration charges.</li>
+        <li>Interfering with a TSA official.</li>
+      </ul>
       <p>If you’re accused of any of the aforementioned, it is of paramount importance that you retain the services of a competent federal crime lawyer at once.</p>
 
       <h1>What Makes a Crime Federal</h1>
-      <p>A case is generally charged federally when the conduct crosses state lines, uses the mail or wire systems, involves a federal agency or federally insured institution, occurs on federal property, or violates a statute Congress has placed within exclusive federal jurisdiction. Some conduct can be charged in either system, and the decision rests with prosecutors rather than the defendant. Cases in this part of Oklahoma are typically brought in the United States District Court for the Western District of Oklahoma, which sits in Oklahoma City and covers Oklahoma County and much of the surrounding region.</p>
+      <p>A case is generally charged federally when the conduct:</p>
+      <ul>
+        <li>Crosses state lines.</li>
+        <li>Uses the mail or wire systems.</li>
+        <li>Involves a federal agency or federally insured institution.</li>
+        <li>Occurs on federal property.</li>
+        <li>Violates a statute Congress has placed within exclusive federal jurisdiction.</li>
+      </ul>
+      <p>Some conduct can be charged in either system, and the decision rests with prosecutors rather than the defendant. Cases in this part of Oklahoma are typically brought in the United States District Court for the Western District of Oklahoma, which sits in Oklahoma City and covers Oklahoma County and much of the surrounding region.</p>
 
       <h1>Penalties for Federal Crimes</h1>
       <p>The first thing you should understand is that federal crimes often entail harsher penalties than state crimes. This means that you could be facing years in prison, crippling fines, and more. Further, you should note that very few federal cases are resolved by trial. Roughly 90 percent of federal defendants plead guilty rather than go to trial, and only about two percent are tried at all. This reflects the substantial sentencing exposure federal charges carry and the incentives built into federal plea negotiation. With so much at stake, you must not proceed without a dedicated attorney in your corner.</p>

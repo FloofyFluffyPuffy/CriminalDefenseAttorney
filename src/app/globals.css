@@ -88,3 +88,93 @@ body {
 
   background-repeat: repeat;
 }
+
+.PAContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(16rem, 0.9fr);
+  align-items: start;
+  gap: 3rem;
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 4rem 2rem;
+}
+
+.PAText {
+  min-width: 0;
+  color: #253247;
+}
+
+.PAText > h1 {
+  margin: 2.5rem 0 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #d6232e;
+  color: #001541;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.PAText > h1:first-of-type {
+  margin-top: 0;
+}
+
+.PAText > p {
+  max-width: 72ch;
+  margin: 0 0 1.125rem;
+  color: #344054;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.PAText > p:first-child {
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid #d7dce5;
+  color: #001541;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.PAText > ul,
+.PAText > ol {
+  max-width: 72ch;
+  margin: 0 0 1.5rem;
+  padding-left: 1.75rem;
+  color: #344054;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.PAText > ul {
+  list-style: disc;
+}
+
+.PAText > ol {
+  list-style: decimal;
+}
+
+.PAText > ul > li,
+.PAText > ol > li {
+  padding-left: 0.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.PAText > ul > li::marker,
+.PAText > ol > li::marker {
+  color: #d6232e;
+  font-weight: 700;
+}
+
+.PAText > ul > li > strong,
+.PAText > ol > li > strong {
+  color: #001442;
+}
+
+@media (max-width: 760px) {
+  .PAContent {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding: 2.5rem 1.25rem;
+  }
+}

@@ -8,33 +8,41 @@ const CivilRights = () => {
 
       <h1>Police Misconduct Litigation in Oklahoma</h1>
       <p>You must understand that federal law prohibits law enforcement officers from interfering with your civil rights in any way. According to the United States Commission on Civil Rights, examples of this are as follows:</p>
-      <p>A law enforcement officer cannot conspire to interfere with your federally protected rights.</p>
-      <p>A law enforcement officer cannot deprive your rights under color of law.</p>
-      <p>A law enforcement officer cannot use, conspire to use, or threaten to use force against you.</p>
-      <p>A law enforcement officer cannot interfere with the free exercise of your civil rights.</p>
+      <ul>
+        <li>A law enforcement officer cannot conspire to interfere with your federally protected rights.</li>
+        <li>A law enforcement officer cannot deprive your rights under color of law.</li>
+        <li>A law enforcement officer cannot use, conspire to use, or threaten to use force against you.</li>
+        <li>A law enforcement officer cannot interfere with the free exercise of your civil rights.</li>
+      </ul>
       <p>With that being said, you may have been made a victim of police misconduct if any of the following circumstances apply:</p>
-      <p>A law enforcement officer uses excessive force when arresting you.</p>
-      <p>A law enforcement officer uses extreme physical or verbal threats when interrogating you.</p>
-      <p>A law enforcement officer falsely charges you.</p>
-      <p>A law enforcement officer falsely imprisons you.</p>
+      <ul>
+        <li>A law enforcement officer uses excessive force when arresting you.</li>
+        <li>A law enforcement officer uses extreme physical or verbal threats when interrogating you.</li>
+        <li>A law enforcement officer falsely charges you.</li>
+        <li>A law enforcement officer falsely imprisons you.</li>
+      </ul>
       <p>Ultimately, any of the above instances of police misconduct may constitute litigation.</p>
 
       <h1>Prison and Jail Litigation in Oklahoma</h1>
       <p>Even if you have been incarcerated, you must understand that you still maintain basic rights. Examples of civil rights you hold while in prison or jail are as follows:</p>
-      <p>You have the right to free speech while incarcerated.</p>
-      <p>You have the right to practice your religion while incarcerated.</p>
-      <p>You have the right to be free from racial segregation or discrimination while incarcerated.</p>
-      <p>You have the right to access the courts and counsel while incarcerated.</p>
-      <p>You have the right to access humane facilities and conditions while incarcerated.</p>
-      <p>You have the right to receive medical attention while incarcerated.</p>
+      <ul>
+        <li>You have the right to free speech while incarcerated.</li>
+        <li>You have the right to practice your religion while incarcerated.</li>
+        <li>You have the right to be free from racial segregation or discrimination while incarcerated.</li>
+        <li>You have the right to access the courts and counsel while incarcerated.</li>
+        <li>You have the right to access humane facilities and conditions while incarcerated.</li>
+        <li>You have the right to receive medical attention while incarcerated.</li>
+      </ul>
       <p>And so, if you are deprived of any of the aforementioned rights, you may need to enter prison and jail litigation with a seasoned Oklahoma City civil rights lawyer.</p>
 
       <h1>Proving Your Civil Rights Claim</h1>
       <p>Civil rights cases are often complex, not just emotionally, but legally. To successfully bring a civil rights claim in Oklahoma, it’s not enough to simply feel that your rights were violated. You must be able to prove certain legal elements in court, supported by concrete evidence.</p>
       <p>Generally speaking, most civil rights claims are brought under Section 1983 of the U.S. Code, which allows individuals to sue state or local officials who, acting “under color of law,” violated their federally protected rights. So, what exactly does that mean?</p>
-      <p>First, you’ll need to show that the person or entity who harmed you was acting in an official capacity. For example, a police officer making an arrest or a correctional officer supervising inmates is typically considered to be acting under color of law. If the individual was off-duty and acting in a purely personal capacity, your claim might not apply.</p>
-      <p>Next, you must prove that a specific constitutional or statutory right was violated. This could be your Fourth Amendment right to be free from excessive force, your Eighth Amendment right to be free from cruel and unusual punishment, or your First Amendment right to freedom of speech or religion, among others. It’s not enough that the officer acted unreasonably; you must link their actions to a clearly established right that was infringed.</p>
-      <p>Finally, your case must be backed by evidence. This can include eyewitness testimony, video footage, medical records, written reports, or even internal communications from the agency involved. These materials help us demonstrate what happened, how your rights were violated, and the harm you suffered as a result.</p>
+      <ol>
+        <li>You’ll need to show that the person or entity who harmed you was acting in an official capacity. For example, a police officer making an arrest or a correctional officer supervising inmates is typically considered to be acting under color of law. If the individual was off-duty and acting in a purely personal capacity, your claim might not apply.</li>
+        <li>You must prove that a specific constitutional or statutory right was violated. This could be your Fourth Amendment right to be free from excessive force, your Eighth Amendment right to be free from cruel and unusual punishment, or your First Amendment right to freedom of speech or religion, among others. It’s not enough that the officer acted unreasonably; you must link their actions to a clearly established right that was infringed.</li>
+        <li>Your case must be backed by evidence. This can include eyewitness testimony, video footage, medical records, written reports, or even internal communications from the agency involved. These materials help us demonstrate what happened, how your rights were violated, and the harm you suffered as a result.</li>
+      </ol>
       <p>At The Jones Firm, PLLC, we know exactly what kind of proof courts are looking for, and we will work diligently to gather the strongest evidence possible to build your case.</p>
 
       <h1>Recovering Compensation</h1>
@@ -49,10 +57,12 @@ const CivilRights = () => {
 
       <h1>Deadlines That May Apply to Your Claim</h1>
       <p>Which deadline governs your case depends on who violated your rights and what kind of claim you bring. More than one may apply at the same time:</p>
-      <p>Section 1983 claims: Two years from the date of the violation, under Oklahoma’s general personal injury limitations period at 12 O.S. § 95.</p>
-      <p>State law claims against a city, county, or state agency: Written notice must be presented within one year of the loss, or the claim is forever barred.</p>
-      <p>After that notice is denied: Suit must be commenced within 180 days of the denial.</p>
-      <p>Claims about jail or prison conditions: If you are still incarcerated, the facility’s grievance process must be completed before suit is filed in federal court.</p>
+      <ul>
+        <li>Section 1983 claims: Two years from the date of the violation, under Oklahoma’s general personal injury limitations period at 12 O.S. § 95.</li>
+        <li>State law claims against a city, county, or state agency: Written notice must be presented within one year of the loss, or the claim is forever barred.</li>
+        <li>After that notice is denied: Suit must be commenced within 180 days of the denial.</li>
+        <li>Claims about jail or prison conditions: If you are still incarcerated, the facility’s grievance process must be completed before suit is filed in federal court.</li>
+      </ul>
       <p>Because these periods run separately and can expire at very different times, the safest course is to have your case reviewed as early as possible rather than waiting to see which deadline applies.</p>
 
       <h1>Common Questions About Civil Rights Claims in Oklahoma City</h1>

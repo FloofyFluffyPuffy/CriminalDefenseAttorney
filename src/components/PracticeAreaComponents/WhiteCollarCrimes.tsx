@@ -8,11 +8,13 @@ const WhiteCollarCrimes = () => {
 
       <h1>Common Examples of White-Collar Crimes</h1>
       <p>White-collar crimes are a type of criminal activity that is committed by high-profile people. These actions are often seen done by individuals in business, finance, or government positions. The most common white-collar crimes include the following:</p>
-      <p>Ponzi schemes: A form of fraud in which people pay into a nonexistent enterprise with the belief that it will succeed and they will receive quick returns on their investment.</p>
-      <p>Extortion: When one party threatens another to give them money. For example, blackmail and business extortion.</p>
-      <p>Embezzlement: When an individual misappropriates assets that are entrusted to them.</p>
-      <p>Corporate fraud: When information is falsified so that a company can save or make money.</p>
-      <p>Bankruptcy fraud: Individuals or businesses can face debts they are unable to pay, causing them to file for bankruptcy. If certain documents and information are hidden from the bankruptcy court, it is fraud.</p>
+      <ul>
+        <li>Ponzi schemes: A form of fraud in which people pay into a nonexistent enterprise with the belief that it will succeed and they will receive quick returns on their investment.</li>
+        <li>Extortion: When one party threatens another to give them money. For example, blackmail and business extortion.</li>
+        <li>Embezzlement: When an individual misappropriates assets that are entrusted to them.</li>
+        <li>Corporate fraud: When information is falsified so that a company can save or make money.</li>
+        <li>Bankruptcy fraud: Individuals or businesses can face debts they are unable to pay, causing them to file for bankruptcy. If certain documents and information are hidden from the bankruptcy court, it is fraud.</li>
+      </ul>
 
       <h1>Federal Sentencing and White-Collar Crimes</h1>
       <p>Many white-collar offenses are prosecuted in Oklahoma state court under Oklahoma’s embezzlement statute and related provisions covering extortion and obtaining property by false pretenses, though cases involving federal agencies, interstate conduct, or the mail and wire systems are charged in federal court. In a federal case, the court consults the federal sentencing guidelines, which have been advisory rather than binding since the Supreme Court’s 2005 decision in United States v. Booker. These guidelines were established by the United States Sentencing Commission to ensure consistency in sentencing decisions that are made by various judges. The penalties chosen for a criminal offender are based on their criminal history, as well as the nature of the crime they committed. It is important to note there are 43 offense levels, 6 criminal history categories, and 4 sentencing zones that determine federal punishment. If a person is convicted, they may face imprisonment, restitution, home detention, forfeitures, heavy fines, and more.</p>

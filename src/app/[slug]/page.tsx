@@ -1,5 +1,32 @@
 import { notFound } from 'next/navigation'
 import { practiceAreas } from '@/app/context/practiceAreas'
+import ArmedRobbery from '@/components/PracticeAreaComponents/ArmedRobbery'
+import AssaultBattery from '@/components/PracticeAreaComponents/AssaultBattery'
+import CivilRights from '@/components/PracticeAreaComponents/CivilRights'
+import CriminalInvestigation from '@/components/PracticeAreaComponents/CriminalInvestigation'
+import DrugTrafficking from '@/components/PracticeAreaComponents/DrugTrafficking'
+import FederalOffenses from '@/components/PracticeAreaComponents/FederalOffenses'
+import GunCrimes from '@/components/PracticeAreaComponents/GunCrimes'
+import Manslaughter from '@/components/PracticeAreaComponents/Manslaughter'
+import Murder from '@/components/PracticeAreaComponents/Murder'
+import OtherCriminalMatters from '@/components/PracticeAreaComponents/OtherCriminalMatters'
+import SexCrimes from '@/components/PracticeAreaComponents/SexCrimes'
+import WhiteCollarCrimes from '@/components/PracticeAreaComponents/WhiteCollarCrimes'
+
+const practiceAreaComponents = {
+  'armed-robbery': ArmedRobbery,
+  'assault-battery': AssaultBattery,
+  'drug-trafficking': DrugTrafficking,
+  'gun-crimes': GunCrimes,
+  'federal-offenses': FederalOffenses,
+  manslaughter: Manslaughter,
+  murder: Murder,
+  'sex-crimes': SexCrimes,
+  'white-collar-crimes': WhiteCollarCrimes,
+  'criminal-investigation': CriminalInvestigation,
+  'civil-rights': CivilRights,
+  'other-criminal-matters': OtherCriminalMatters,
+}
 
 type PracticeAreaPageProps = {
   params: Promise<{ slug: string }>
@@ -18,6 +45,7 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
   }
 
   const backgroundImage = practiceArea.image
+  const PracticeAreaContent = practiceAreaComponents[practiceArea.slug]
 
   return (
     <main className=''>
@@ -28,9 +56,9 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
         <img src="/assets/mainLogoWhite.svg" alt="Bail Bonds" className="w-full -mt-18 h-54" />
         <h1 className="max-w-4xl text-2xl font-bold sm:text-4xl">Oklahoma {practiceArea.title} Lawyer</h1>
       </div>
-      <div className='PAContent grid grid-cols-3 grid-rows-2 mx-auto w-full'>
-        <div className='PAText bg-amber-200 flex-col col-span-2 h-10'>
-          put a bunch of h1 h2 h3 here and p, disect the paragraph into that
+      <div className='PAContent'>
+        <div className='PAText'>
+          <PracticeAreaContent />
         </div>
         <div className='PASide flex flex-col bg-red-200'>
           so put like a contact form here and some extra image

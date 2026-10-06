@@ -1,68 +1,80 @@
+"use client"
+
 import React from 'react'
 
 const ContactForm = () => {
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="flex w-full flex-col gap-5 text-white">
-      {/* Name Row */}
+    <form onSubmit={(e) => e.preventDefault()} className="mt-5 flex w-full flex-col gap-4 text-white sm:mt-6 sm:gap-5">
       <div className="flex flex-col">
-        <label className="mb-1.5 text-sm font-bold">
-          Name <span className="text-xs font-normal italic text-[#cf3535]">(Required)</span>
+        <label className="mb-1.5 text-xs font-bold uppercase tracking-wide">
+          Name <span className="font-normal italic normal-case text-[#ef6970]">(required)</span>
         </label>
         <div className="flex flex-col gap-4 sm:flex-row">
           <div className="flex flex-1 flex-col">
             <input
               type="text"
-              className="w-full rounded-sm border border-gray-300 bg-white p-2.5 text-sm text-black outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="First Name"
+              aria-label="First name"
+              className="h-11 w-full rounded-sm border border-white/60 bg-white px-3.5 text-sm text-[#171717] placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-[#D6232E]"
             />
-            <span className="mt-1 text-xs text-slate-300">First</span>
+            <span className="mt-1 text-[11px] text-white/60">First</span>
           </div>
           <div className="flex flex-1 flex-col">
             <input
               type="text"
-              className="w-full rounded-sm border border-gray-300 bg-white p-2.5 text-sm text-black outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="Last Name"
+              aria-label="Last name"
+              className="h-11 w-full rounded-sm border border-white/60 bg-white px-3.5 text-sm text-[#171717] placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-[#D6232E]"
             />
-            <span className="mt-1 text-xs text-slate-300">Last</span>
+            <span className="mt-1 text-[11px] text-white/60">Last</span>
           </div>
         </div>
       </div>
 
-      {/* Phone & Email Row */}
       <div className="flex flex-col gap-4 sm:flex-row">
         <div className="flex flex-1 flex-col">
-          <label className="mb-1.5 text-sm font-bold">Phone</label>
+          <label htmlFor="footer-phone" className="mb-1.5 text-xs font-bold uppercase tracking-wide">Phone</label>
           <input
+            id="footer-phone"
             type="tel"
             placeholder="(999) 999-9999"
-            className="w-full rounded-sm border border-gray-300 bg-white p-2.5 text-sm text-black placeholder-gray-400 outline-none focus:ring-2 focus:ring-red-500"
+            className="h-11 w-full rounded-sm border border-white/60 bg-white px-3.5 text-sm text-[#171717] placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-[#D6232E]"
           />
         </div>
         <div className="flex flex-1 flex-col">
-          <label className="mb-1.5 text-sm font-bold">
-            Email <span className="text-xs font-normal italic text-[#cf3535]">(Required)</span>
+          <label htmlFor="footer-email" className="mb-1.5 text-xs font-bold uppercase tracking-wide">
+            Email <span className="font-normal italic normal-case text-[#ef6970]">(required)</span>
           </label>
           <input
+            id="footer-email"
             type="email"
-            className="w-full rounded-sm border border-gray-300 bg-white p-2.5 text-sm text-black outline-none focus:ring-2 focus:ring-red-500"
+            placeholder="your.email@example.com"
+            className="h-11 w-full rounded-sm border border-white/60 bg-white px-3.5 text-sm text-[#171717] placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-[#D6232E]"
           />
         </div>
       </div>
 
-      {/* Message Row */}
       <div className="flex flex-col">
-        <label className="mb-1.5 text-sm font-bold">
-          What your situation? <span className="text-xs font-normal italic text-[#cf3535]">(Required)</span>
+        <label htmlFor="footer-message" className="mb-1.5 text-xs font-bold uppercase tracking-wide">
+          How can we help? <span className="font-normal italic normal-case text-[#ef6970]">(required)</span>
         </label>
         <textarea
-          rows={5}
-          className="w-full resize-y rounded-sm border border-gray-300 bg-white p-2.5 text-sm text-black outline-none focus:ring-2 focus:ring-red-500"
+          id="footer-message"
+          rows={4}
+          placeholder="Briefly describe your case, dates involved, and any upcoming hearings..."
+          className="min-h-28 w-full resize-y rounded-sm border border-white/60 bg-[#f1f1f2] p-3.5 text-sm text-[#171717] placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-[#D6232E]"
         />
       </div>
-      <button
-        type="submit"
-        className="w-full rounded-sm bg-[#D6232E] px-6 py-2.5 font-bold text-white transition-colors hover:bg-[#b91c26] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-      >
-        Submit
-      </button>
+      <div className="flex flex-col items-start justify-between gap-4 pt-1 sm:flex-row sm:items-center">
+        <button
+          type="submit"
+          className="inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#D6232E] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-[#D6232E]/20 transition-colors hover:bg-[#b91c26] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Fight for my rights
+          <span aria-hidden="true" className="text-xl leading-none">→</span>
+        </button>
+        <p className="text-[11px] text-white/55">100% Confidential · Fast 15-Minute Response Time</p>
+      </div>
     </form>
   )
 }

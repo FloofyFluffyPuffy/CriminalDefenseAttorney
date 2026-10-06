@@ -24,6 +24,16 @@ body {
   background-position: center;
 }
 
+.FooterBG {
+  background-color: #001541;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 20, 66, 0.6)),
+    url('/assets/FooterBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .HomePractices {
   background-image: url('/assets/flippedwalking.png');
   background-size: cover;

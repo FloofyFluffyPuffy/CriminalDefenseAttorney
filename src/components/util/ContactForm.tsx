@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactForm = () => {
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="flex max-w-xl flex-col gap-5 text-white">
+    <form onSubmit={(e) => e.preventDefault()} className="flex border-white border p-4 bg-[#001442] rounded-2xl max-w-xl flex-col gap-5 text-white">
       {/* Name Row */}
       <div className="flex flex-col">
         <label className="mb-1.5 text-sm font-bold">
@@ -50,7 +50,7 @@ const ContactForm = () => {
       {/* Message Row */}
       <div className="flex flex-col">
         <label className="mb-1.5 text-sm font-bold">
-          How can we help? <span className="text-xs font-normal italic text-[#cf3535]">(Required)</span>
+          What your situation? <span className="text-xs font-normal italic text-[#cf3535]">(Required)</span>
         </label>
         <textarea
           rows={8}

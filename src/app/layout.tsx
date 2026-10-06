@@ -3,6 +3,7 @@ import { Murecho } from "next/font/google";
 import "./globals.css";
 import { ContextProvider } from "./context/Provider";
 import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
 
 const murecho = Murecho({
   variable: "--font-murecho",
@@ -22,8 +23,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <ContextProvider>
-          <Header />
+          <Header/>
           {children}
+          <Footer/>
         </ContextProvider>
       </body>
     </html>

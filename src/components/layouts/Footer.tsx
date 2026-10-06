@@ -46,7 +46,7 @@ const Footer = () => {
                   href='https://www.google.com/maps/search/?api=1&query=512+NW+12th+St%2C+Oklahoma+City%2C+OK+73103'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='transition-colors hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+                  className='transform scale-90 flex h-16 w-full items-center rounded-md border border-white/10 bg-[#001442] px-3 py-2 text-white/90 shadow-sm transition-all hover:scale-100 hover:border-white/25 hover:text-white hover:underline focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
                 >
                   512 NW 12th St,<br />
                   Oklahoma City, OK 73103
@@ -63,26 +63,21 @@ const Footer = () => {
               </h2>
               <a
                 href='tel:+14059304209'
-                className='block text-lg font-bold transition-colors hover:text-[#ef6970] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+                className='group transform scale-90 flex h-16 w-full items-center gap-2.5 rounded-md border border-[#D6232E]/60 bg-[#D6232E]/10 px-3 py-2 text-lg font-bold shadow-sm transition-all hover:scale-100 hover:border-[#D6232E] hover:bg-[#D6232E] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
               >
+                <svg aria-hidden='true' viewBox='0 0 24 24' fill='none' className='h-5 w-5 text-[#ef6970] transition-colors group-hover:text-white' stroke='currentColor' strokeWidth='2'>
+                  <path strokeLinecap='round' strokeLinejoin='round' d='M21 16.5v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 1.1 3.8 2 2 0 0 1 3.1 1.6h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7 9.6a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z' />
+                </svg>
                 (405) 930-4209
               </a>
-              <p className='mt-1 text-xs text-white/60'>Lines open 24/7/365</p>
+              <p className='mt-2 inline-flex items-center gap-2 text-xs font-medium text-white/75'>
+                <span className='h-2 w-2 rounded-full bg-emerald-400' />
+                Available 24/7
+              </p>
             </div>
           </div>
 
-          <div className='mt-8 flex flex-wrap gap-2 text-xs font-semibold'>
-            <span className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#18223a] px-3 py-1.5 text-white/85'>
-              <span className='h-2 w-2 rounded-full bg-emerald-400' />
-              Available 24/7
-            </span>
-            <span className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#18223a] px-3 py-1.5 text-white/85'>
-              <span className='h-2 w-2 rounded-full bg-[#D6232E]' />
-              No Win No Fee Consultation
-            </span>
-          </div>
-
-          <nav aria-label='Social media' className='mt-6 flex items-center gap-3'>
+          <nav aria-label='Social media' className='mt-8 flex w-fit items-center gap-4 rounded-lg border border-white/10 bg-white/10 px-3 py-2 backdrop-blur-sm'>
             {socialLinks.map((social) => (
               <a
                 key={social.name}
@@ -90,9 +85,9 @@ const Footer = () => {
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label={`Visit The Jones Firm on ${social.name}`}
-                className='flex h-10 w-10 items-center justify-center rounded-full bg-[#222b3e] p-2 transition-colors hover:bg-[#D6232E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+                className='transform scale-90 transition-all hover:scale-100 hover:opacity-80 focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
               >
-                <Image src={social.icon} alt='' width={24} height={24} className='h-full w-full rounded-full object-contain' />
+                <Image src={social.icon} alt='' width={32} height={32} className='h-8 w-8 object-contain' />
               </a>
             ))}
           </nav>

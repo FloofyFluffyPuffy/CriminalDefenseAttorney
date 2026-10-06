@@ -70,7 +70,7 @@ const HomeAbout = () => {
             <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
               <Link
                 href="/about"
-                className="inline-flex min-h-11 items-center bg-[#D6232E] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#001541] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="transform scale-90 inline-flex min-h-11 items-center bg-[#D6232E] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-100 hover:bg-white hover:text-[#001541] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Learn More About Ron Jones
               </Link>
@@ -84,7 +84,7 @@ const HomeAbout = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit Ron Jones on ${social.name}`}
-                    className="transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="transform scale-90 transition-all hover:scale-100 hover:opacity-80 focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
                     <Image
                       src={social.icon}

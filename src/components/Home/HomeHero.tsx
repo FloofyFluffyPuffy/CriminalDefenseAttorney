@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Link from 'next/link'
+
 const HomeHero = () => {
   return (
     <section className='HomeHero h-screen w-full relative overflow-hidden scale-x-[-1]'>
@@ -9,12 +11,12 @@ const HomeHero = () => {
           <img className='Logo w-lg h-64' src="/assets/mainLogoBLue.svg" alt="" />
           <h1 className='text-6xl text-[#001442] font-bold'>OKLAHOMA CITY</h1>
           <h2 className='text-4xl text-[#001442] font-semibold'>Criminal Defense Lawyer</h2>
-          <a 
-            href="/contact" 
-            className='mt-2 inline-flex min-h-11 items-center bg-[#D3222B] px-5 py-2.5 text-[17px] font-semibold text-white transition-colors hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#001442]'
+          <Link
+            href="/contact"
+            className='transform scale-90 mt-2 inline-flex min-h-11 items-center bg-[#D3222B] px-5 py-2.5 text-[17px] font-semibold text-white transition-all hover:scale-100 hover:bg-white hover:text-black focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#001442]'
           >
             SCHEDULE YOUR FREE CONSULTATION
-          </a>
+          </Link>
         </div>
       </div>
     </section>

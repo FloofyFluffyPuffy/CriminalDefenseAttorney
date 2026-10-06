@@ -68,7 +68,7 @@ const ContactForm = () => {
       <div className="flex flex-col items-start justify-between gap-4 pt-1 sm:flex-row sm:items-center">
         <button
           type="submit"
-          className="inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#D6232E] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-[#D6232E]/20 transition-colors hover:bg-[#b91c26] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="transform scale-90 inline-flex min-h-12 items-center gap-3 rounded-sm bg-[#D6232E] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-[#D6232E]/20 transition-all hover:scale-100 hover:bg-[#b91c26] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           Fight for my rights
           <span aria-hidden="true" className="text-xl leading-none">→</span>

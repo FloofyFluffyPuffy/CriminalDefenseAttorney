@@ -12,7 +12,7 @@ const HomePractices = () => {
         <ul className='grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 sm:gap-5'>
           {practiceAreas.map(({ slug, title }) => (
             <li key={slug}>
-              <Link className='flex min-h-[2.625rem] items-center justify-center bg-[#d6232e] px-3 py-2 text-center text-base text-white no-underline transition-colors duration-150 hover:bg-[#001541] focus-visible:outline-3 focus-visible:outline-[#001541] focus-visible:outline-offset-3' href={`/${slug}`}>
+              <Link className='transform scale-90 flex min-h-[2.625rem] items-center justify-center bg-[#d6232e] px-3 py-2 text-center text-base text-white no-underline transition-all duration-200 hover:scale-100 hover:bg-[#001541] focus-visible:scale-100 focus-visible:outline-3 focus-visible:outline-[#001541] focus-visible:outline-offset-3' href={`/${slug}`}>
                 {title}
               </Link>
             </li>

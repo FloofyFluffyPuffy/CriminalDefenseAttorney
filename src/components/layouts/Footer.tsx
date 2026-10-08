@@ -11,7 +11,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className='FooterBG text-white'>
+    <footer id='footer' className='FooterBG text-white'>
       <section className='mx-auto grid max-w-7xl gap-10 px-6 py-10 sm:px-10 sm:py-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16 lg:px-12 lg:py-7'>
         <div className='flex flex-col justify-center'>
           <Link href='/' aria-label='The Jones Firm home' className='mb-7 inline-block w-fit'>

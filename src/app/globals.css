@@ -37,7 +37,7 @@ html {
 .AboutHero {
   background-image:
   linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 20, 66, 0.6)),
-  url('/assets/walkingStair.png');
+  url('/assets/court.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;

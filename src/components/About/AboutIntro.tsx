@@ -1,6 +1,11 @@
+"use client";
+
 import React from 'react'
+import { useContextData } from "@/app/context/Provider";
 
 const AboutIntro = () => {
+  const { scrollingDown } = useContextData();
+
   return (
     <section className="AboutIntro relative overflow-clip py-8 checkBg">
       <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:28px_28px]" />
@@ -18,7 +23,7 @@ const AboutIntro = () => {
         </div>
 
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
-          <aside className="lg:sticky lg:top-28 lg:self-start lg:w-[360px] xl:w-[390px]">
+          <aside className={`lg:sticky ${scrollingDown ? "lg:top-4" : "lg:top-28"} lg:self-start lg:w-[360px] xl:w-[390px] transition-[top] duration-300`}>
             <div className="overflow-hidden rounded-[1.5rem] border border-[#D6232E]/40 bg-[#001442] text-white shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
               <div className="relative h-[12.5rem] w-full overflow-hidden bg-[#111827]">
                 <img

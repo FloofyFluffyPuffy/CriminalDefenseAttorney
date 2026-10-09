@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutIntro = () => {
   return (
-    <section className="AboutIntro relative overflow-hidden py-8 checkBg">
+    <section className="AboutIntro relative overflow-clip py-8 checkBg">
       <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:28px_28px]" />
       <div className="absolute -left-20 top-16 h-72 w-72 rounded-full bg-[#D6232E]/10 blur-[110px]" />
       <div className="absolute -right-10 bottom-0 h-80 w-80 rounded-full bg-[#001442]/50 blur-[120px]" />
@@ -18,7 +18,7 @@ const AboutIntro = () => {
         </div>
 
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
-          <aside className="lg:sticky lg:top-28 lg:w-[360px] xl:w-[390px]">
+          <aside className="lg:sticky lg:top-28 lg:self-start lg:w-[360px] xl:w-[390px]">
             <div className="overflow-hidden rounded-[1.5rem] border border-[#D6232E]/40 bg-[#001442] text-white shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
               <div className="relative h-[12.5rem] w-full overflow-hidden bg-[#111827]">
                 <img
@@ -26,19 +26,18 @@ const AboutIntro = () => {
                   src="assets/lookCrop.png"
                   alt="Ron Jones"
                 />
-              </div>
-
-              <div className="space-y-3 bg-[#001442] p-4 text-[10px] text-white/85">
-                <div className="border-b border-white/15 pb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001442] via-[#001442]/15 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4">
                   <p className="mb-1 text-[8px] font-bold uppercase tracking-[0.28em] text-[#D6232E]">
                     Founder &amp; Lead Trial Counsel
                   </p>
                   <h2 className="text-[1.35rem] font-black uppercase leading-none tracking-tight text-white">
-                    Ron Jones,
-                    <span className="mt-1 block text-[1rem] text-white/95">Esq.</span>
+                    Ron Jones, Esq.
                   </h2>
                 </div>
+              </div>
 
+              <div className="space-y-3 bg-[#001442] p-4 text-[10px] text-white/85">
                 <div className="flex items-center gap-2 text-[9px] text-white/75">
                   <span className="text-[#D6232E]">●</span>
                   <span>Oklahoma Bar Association • Admitted 2018</span>
@@ -67,30 +66,30 @@ const AboutIntro = () => {
                     <p className="mb-2 text-[8px] font-bold uppercase tracking-[0.24em] text-[#D6232E]">
                       Trial Trajectory
                     </p>
-                    <div className="space-y-2 leading-5">
-                      <div className="flex justify-between gap-3 border-b border-white/10 pb-1.5">
-                        <span className="font-semibold text-white">The Jones Firm, PLLC</span>
-                        <span className="whitespace-nowrap text-[#D6232E]">2021-Present</span>
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-2 leading-4">
+                      <div className="min-w-0 border-b border-white/10 pb-1.5">
+                        <span className="block font-semibold text-white">The Jones Firm, PLLC</span>
+                        <span className="text-[#D6232E]">2021-Present</span>
                       </div>
-                      <div className="flex justify-between gap-3 border-b border-white/10 pb-1.5">
-                        <span className="font-semibold text-white">Still She Rises – Tulsa</span>
-                        <span className="whitespace-nowrap text-[#D6232E]">2018-2021</span>
+                      <div className="min-w-0 border-b border-white/10 pb-1.5">
+                        <span className="block font-semibold text-white">Still She Rises – Tulsa</span>
+                        <span className="text-[#D6232E]">2018-2021</span>
                       </div>
-                      <div className="flex justify-between gap-3 border-b border-white/10 pb-1.5">
-                        <span className="font-semibold text-white">Cannon &amp; Associates</span>
-                        <span className="whitespace-nowrap text-[#D6232E]">Oklahoma</span>
+                      <div className="min-w-0 border-b border-white/10 pb-1.5">
+                        <span className="block font-semibold text-white">Cannon &amp; Associates</span>
+                        <span className="text-[#D6232E]">Oklahoma</span>
                       </div>
-                      <div className="flex justify-between gap-3 border-b border-white/10 pb-1.5">
-                        <span className="font-semibold text-white">Durkin &amp; Roberts</span>
-                        <span className="whitespace-nowrap text-[#D6232E]">Chicago</span>
+                      <div className="min-w-0 border-b border-white/10 pb-1.5">
+                        <span className="block font-semibold text-white">Durkin &amp; Roberts</span>
+                        <span className="text-[#D6232E]">Chicago</span>
                       </div>
-                      <div className="flex justify-between gap-3 border-b border-white/10 pb-1.5">
-                        <span className="font-semibold text-white">Lawndale Christian Legal Center</span>
-                        <span className="whitespace-nowrap text-[#D6232E]">Chicago</span>
+                      <div className="min-w-0">
+                        <span className="block font-semibold text-white">Lawndale Christian Legal Center</span>
+                        <span className="text-[#D6232E]">Chicago</span>
                       </div>
-                      <div className="flex justify-between gap-3">
-                        <span className="font-semibold text-white">Holistic Defense Practice</span>
-                        <span className="whitespace-nowrap text-[#D6232E]">Chicago</span>
+                      <div className="min-w-0">
+                        <span className="block font-semibold text-white">Holistic Defense Practice</span>
+                        <span className="text-[#D6232E]">Chicago</span>
                       </div>
                     </div>
                   </div>
@@ -111,30 +110,6 @@ const AboutIntro = () => {
               <p className="mt-4 text-[1.05rem] italic leading-relaxed text-white/90 md:text-[1.2rem]">
                 “Ron Jones is living his dream to help clients continue living theirs.”
               </p>
-            </div>
-
-            <div className="mb-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-              {[
-                { value: '10-Min', label: 'Acquittal', sub: 'Historic Verdict' },
-                { value: '$24K', label: '1st-Yr Salary', sub: 'People First' },
-                { value: '2021', label: 'Established', sub: 'OKC Chambers' },
-                { value: 'Top 5', label: 'UChicago', sub: 'Law School J.D.' }
-              ].map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-xl border border-white/10 bg-[#001442]/70 p-3 shadow-[0_12px_25px_rgba(0,0,0,0.18)]"
-                >
-                  <div className="text-[1.8rem] font-bold leading-none text-[#D6232E] md:text-[2.1rem]">
-                    {stat.value}
-                  </div>
-                  <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/85">
-                    {stat.label}
-                  </div>
-                  <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-white/60">
-                    {stat.sub}
-                  </div>
-                </div>
-              ))}
             </div>
 
             <div className="space-y-5">
@@ -218,38 +193,6 @@ const AboutIntro = () => {
                 </p>
               </article>
 
-              <div className="overflow-hidden rounded-[1.2rem] border border-white/10 bg-[#001442]/70">
-                <img
-                  className="h-40 w-full object-cover object-center opacity-80 md:h-52"
-                  src="assets/lookCrop.png"
-                  alt="Ron Jones courtroom profile"
-                />
-              </div>
-
-              <div className="flex flex-col gap-4 rounded-[1.2rem] border border-[#D6232E]/40 bg-[#001442]/80 p-4 md:flex-row md:items-center md:justify-between md:p-5">
-                <div>
-                  <div className="mb-1 text-[9px] font-bold uppercase tracking-[0.26em] text-[#D6232E]">
-                    Protect Your Freedom Today
-                  </div>
-                  <h3 className="text-lg font-bold text-white md:text-xl">
-                    Facing High-Stakes State or Federal Charges?
-                  </h3>
-                </div>
-                <div className="flex flex-col gap-2 sm:flex-row">
-                  <a
-                    href="tel:4059304209"
-                    className="inline-flex items-center justify-center rounded-full bg-[#D6232E] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-90"
-                  >
-                    Call Now
-                  </a>
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:border-[#D6232E] hover:text-[#D6232E]"
-                  >
-                    Schedule Evaluation
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

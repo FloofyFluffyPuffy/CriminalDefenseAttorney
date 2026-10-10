@@ -23,7 +23,7 @@ const Header = () => {
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-8 lg:flex">
-          <Link className="text-sm font-medium tracking-wide text-white transition-colors hover:text-[#D6232E]" href="/">
+          <Link className="transform scale-90 text-sm font-medium tracking-wide text-white transition-all hover:scale-100 hover:text-[#D6232E] focus-visible:scale-100" href="/">
             Home
           </Link>
           <details className="group relative">
@@ -39,11 +39,8 @@ const Header = () => {
               ))}
             </div>
           </details>
-          <Link className="text-sm font-medium tracking-wide text-white transition-colors hover:text-[#D6232E]" href="/about">
+          <Link className="transform scale-90 text-sm font-medium tracking-wide text-white transition-all hover:scale-100 hover:text-[#D6232E] focus-visible:scale-100" href="/about">
             About
-          </Link>
-          <Link className="text-sm font-medium tracking-wide text-white transition-colors hover:text-[#D6232E]" href="/contact">
-            Contact
           </Link>
           <Link className="transform scale-90 flex items-center gap-2 bg-[#D6232E] px-5 py-3 text-sm font-semibold tracking-wide text-white transition-all hover:scale-100 hover:bg-white hover:text-[#001541] focus-visible:scale-100" href="/contact">
             <Image src="/assets/phone.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
@@ -57,7 +54,7 @@ const Header = () => {
             <span aria-hidden="true" className="text-xs transition-transform group-open:rotate-180">&#9662;</span>
           </summary>
           <nav aria-label="Mobile navigation" className="absolute right-0 top-full z-30 mt-4 w-64 border-t-2 border-[#D6232E] bg-white p-3 text-[#001541] shadow-xl">
-            <Link className="block px-4 py-3 text-sm font-medium hover:bg-[#f4f5f7] hover:text-[#D6232E]" href="/">Home</Link>
+            <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/">Home</Link>
             <details className="group/practice">
               <summary className="transform scale-90 flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
                 Practice Areas
@@ -71,11 +68,8 @@ const Header = () => {
                 ))}
               </div>
             </details>
-            <Link className="block px-4 py-3 text-sm font-medium hover:bg-[#f4f5f7] hover:text-[#D6232E]" href="/about">
+            <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/about">
               About
-            </Link>
-            <Link className="block px-4 py-3 text-sm font-medium hover:bg-[#f4f5f7] hover:text-[#D6232E]" href="/contact">
-              Contact
             </Link>
             <Link className="transform scale-90 mt-2 flex items-center gap-2 bg-[#D6232E] px-4 py-3 text-sm font-semibold text-white transition-transform hover:scale-100 focus-visible:scale-100" href="/contact">
               <Image src="/assets/phone.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />

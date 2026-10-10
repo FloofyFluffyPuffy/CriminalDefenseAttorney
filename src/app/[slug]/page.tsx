@@ -46,6 +46,7 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
 
   const backgroundImage = practiceArea.image
   const PracticeAreaContent = practiceAreaComponents[practiceArea.slug]
+  const isOtherCriminalMatter = practiceArea.slug === 'other-criminal-matters'
 
   return (
     <main className="">
@@ -54,7 +55,9 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
         style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})` }}
       >
         <img src="/assets/mainLogoWhite.svg" alt="Bail Bonds" className="-mt-18 h-54 w-full" />
-        <h1 className="max-w-4xl text-2xl font-bold sm:text-4xl">Oklahoma {practiceArea.title} Lawyer</h1>
+        <h1 className="max-w-4xl text-2xl font-bold sm:text-4xl">
+          {isOtherCriminalMatter ? 'Oklahoma Criminal Defense Lawyer' : `Oklahoma ${practiceArea.title} Lawyer`}
+        </h1>
       </div>
 
       <div className="PAContent flex flex-col items-start gap-8 lg:flex-row">
@@ -66,7 +69,7 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
           <div className="ContactRedirect flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#001442] px-6 py-10 text-center shadow-xl sm:px-8">
             <img className="h-20 w-56 object-contain" src="/assets/swordRed.svg" alt="" />
             <h2 className="TextHeading text-2xl font-bold leading-tight text-white sm:text-3xl">
-              Accused of {practiceArea.title} in Oklahoma?
+              {isOtherCriminalMatter ? 'Accused of a crime in Oklahoma?' : `Accused of ${practiceArea.title} in Oklahoma?`}
             </h2>
             <p className="textDesc max-w-md text-sm leading-6 text-white/80">
               The stakes are high, but you don’t have to face the charges alone. Contact our team for a confidential review of your case.

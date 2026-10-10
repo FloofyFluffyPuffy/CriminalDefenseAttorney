@@ -52,6 +52,15 @@ const Footer = () => {
                   Oklahoma City, OK 73103
                 </a>
               </address>
+              <a
+                href='https://www.google.com/maps/search/?api=1&query=512+NW+12th+St%2C+Oklahoma+City%2C+OK+73103'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='mt-2 inline-flex items-center gap-2 text-xs font-medium text-white/75 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'
+              >
+                <Image src='/assets/google-maps.svg' alt='' width={16} height={16} className='h-4 w-4' />
+                Open Google Map
+              </a>
             </div>
 
             <div>

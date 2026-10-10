@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { practiceAreas } from "@/app/context/practiceAreas";
@@ -7,6 +8,17 @@ import { useContextData } from "@/app/context/Provider";
 
 const Header = () => {
   const { scrollingDown } = useContextData();
+  const practiceAreasMenuRef = useRef<HTMLDetailsElement>(null);
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+  const mobilePracticeAreasMenuRef = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    if (scrollingDown) {
+      practiceAreasMenuRef.current?.removeAttribute("open");
+      mobileMenuRef.current?.removeAttribute("open");
+      mobilePracticeAreasMenuRef.current?.removeAttribute("open");
+    }
+  }, [scrollingDown]);
 
   return (
     <header className={`sticky top-0 z-50 border-b border-white/10 bg-[#001541] text-white transition-transform duration-300 ${scrollingDown ? "-translate-y-full" : "translate-y-0"}`}>
@@ -26,7 +38,7 @@ const Header = () => {
           <Link className="transform scale-90 text-sm font-medium tracking-wide text-white transition-all hover:scale-100 hover:text-[#D6232E] focus-visible:scale-100" href="/">
             Home
           </Link>
-          <details className="group relative">
+          <details ref={practiceAreasMenuRef} className="group relative">
             <summary className="transform scale-90 flex cursor-pointer list-none items-center gap-2 text-sm font-medium tracking-wide text-white transition-all hover:scale-100 hover:text-[#D6232E] focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
               Practice Areas
               <span aria-hidden="true" className="text-xs transition-transform group-open:rotate-180">&#9662;</span>
@@ -42,20 +54,20 @@ const Header = () => {
           <Link className="transform scale-90 text-sm font-medium tracking-wide text-white transition-all hover:scale-100 hover:text-[#D6232E] focus-visible:scale-100" href="/about">
             About
           </Link>
-          <Link className="transform scale-90 flex items-center gap-2 bg-[#D6232E] px-5 py-3 text-sm font-semibold tracking-wide text-white transition-all hover:scale-100 hover:bg-white hover:text-[#001541] focus-visible:scale-100" href="/contact">
+          <Link className="transform rounded scale-90 flex items-center gap-2 bg-[#D6232E] px-5 py-3 text-sm font-semibold tracking-wide text-white shadow-lg shadow-[#D6232E]/20 transition-all hover:scale-100 hover:bg-[#b91c26] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" href="/contact">
             <Image src="/assets/phone.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
             Call Now
           </Link>
         </nav>
 
-        <details className="group relative lg:hidden">
+        <details ref={mobileMenuRef} className="group relative lg:hidden">
           <summary className="transform scale-90 flex cursor-pointer list-none items-center gap-2 border border-white/30 px-4 py-3 text-sm font-semibold transition-transform hover:scale-100 focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
             Menu
             <span aria-hidden="true" className="text-xs transition-transform group-open:rotate-180">&#9662;</span>
           </summary>
           <nav aria-label="Mobile navigation" className="absolute right-0 top-full z-30 mt-4 w-64 border-t-2 border-[#D6232E] bg-white p-3 text-[#001541] shadow-xl">
             <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/">Home</Link>
-            <details className="group/practice">
+            <details ref={mobilePracticeAreasMenuRef} className="group/practice">
               <summary className="transform scale-90 flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
                 Practice Areas
                 <span aria-hidden="true" className="text-xs transition-transform group-open/practice:rotate-180">&#9662;</span>
@@ -71,7 +83,7 @@ const Header = () => {
             <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/about">
               About
             </Link>
-            <Link className="transform scale-90 mt-2 flex items-center gap-2 bg-[#D6232E] px-4 py-3 text-sm font-semibold text-white transition-transform hover:scale-100 focus-visible:scale-100" href="/contact">
+            <Link className="transform scale-90 mt-2 flex items-center gap-2 bg-[#D6232E] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#D6232E]/20 transition-all hover:scale-100 hover:bg-[#b91c26] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" href="/contact">
               <Image src="/assets/phone.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
               Call Now
             </Link>

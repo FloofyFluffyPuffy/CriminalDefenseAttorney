@@ -17,7 +17,6 @@ const ContactForm = () => {
               aria-label="First name"
               className="h-11 w-full rounded-sm border border-white/60 bg-white px-3.5 text-sm text-[#171717] placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-[#D6232E]"
             />
-            <span className="mt-1 text-[11px] text-white/60">First</span>
           </div>
           <div className="flex flex-1 flex-col">
             <input
@@ -26,7 +25,6 @@ const ContactForm = () => {
               aria-label="Last name"
               className="h-11 w-full rounded-sm border border-white/60 bg-white px-3.5 text-sm text-[#171717] placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-[#D6232E]"
             />
-            <span className="mt-1 text-[11px] text-white/60">Last</span>
           </div>
         </div>
       </div>
@@ -73,7 +71,7 @@ const ContactForm = () => {
           Fight for my rights
           <span aria-hidden="true" className="text-xl leading-none">→</span>
         </button>
-        <p className="text-[11px] text-white/55">100% Confidential · Fast 15-Minute Response Time</p>
+        <p className="text-[11px] text-white/55"></p>
       </div>
     </form>
   )

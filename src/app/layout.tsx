@@ -4,6 +4,7 @@ import "./globals.css";
 import { ContextProvider } from "./context/Provider";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import Blog from "@/components/layouts/Blog";
 
 const murecho = Murecho({
   variable: "--font-murecho",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ContextProvider>
           <Header/>
           {children}
+          <Blog/>
           <Footer/>
         </ContextProvider>
       </body>

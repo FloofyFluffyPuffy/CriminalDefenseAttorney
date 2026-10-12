@@ -103,9 +103,9 @@ const Footer = () => {
         </div>
 
         <div className='rounded-xl border border-white/10 bg-[#0a1225]/90 p-5 shadow-2xl shadow-black/25 sm:p-8'>
-          <h2 className='text-2xl font-bold leading-tight sm:text-[28px]'>Request Your Confidential Case Review</h2>
+          <h2 className='text-2xl font-bold leading-tight sm:text-[28px]'>Contact The Jones Firm, PLLC</h2>
           <p className='mt-1 text-xs leading-5 text-white/65 sm:text-[13px]'>
-            Speak immediately with our litigation team. Strict attorney-client privilege applies.
+            Speak immediate with our legal team for free consultation.
           </p>
           <ContactForm />
         </div>

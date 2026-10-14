@@ -1,27 +1,77 @@
-import React from 'react'
+import Link from "next/link";
+
 const Blog = () => {
-    const BlogsData = [
-        {image: "assets/homicideBlog.png", title: "What Are The Types Of Homicide Charges in Oklahoma?", desc: "Homicide charges are exceptionally serious, so understanding the types you can face is vital. This blog explores what you must know."},
-        {image: "assets/drugBlog.png", title: "What Are the Penalties for Drug Trafficking in Oklahoma?", desc: "Drug trafficking offenses are incredibly serious. This blog explores what you must know if facing these charges."},
-        {image: "assets/resisting.png", title: "What Penalties Can I Face For Resisting Arrest In Oklahoma City?", desc: "Have you ever wondered about the penalties you could face for resisting arrest in Oklahoma? Read this blog to learn more."}
-    ]
+  const blogPosts = [
+    {
+      image: "/assets/homicideBlog.png",
+      title: "What Are The Types Of Homicide Charges in Oklahoma?",
+      desc: "Homicide charges are exceptionally serious, so understanding the types you can face is vital. This blog explores what you must know.",
+    },
+    {
+      image: "/assets/drugBlog.png",
+      title: "What Are the Penalties for Drug Trafficking in Oklahoma?",
+      desc: "Drug trafficking offenses are incredibly serious. This blog explores what you must know if facing these charges.",
+    },
+    {
+      image: "/assets/resisting.png",
+      title: "What Penalties Can I Face For Resisting Arrest In Oklahoma City?",
+      desc: "Have you ever wondered about the penalties you could face for resisting arrest in Oklahoma? Read this blog to learn more.",
+    },
+  ];
 
   return (
-    <section className='Blog flex h-screen justify-center items-center'>
-        <div className='BlogContentCon text-center h-full bg-amber-300'>
-            <h1 className='text-4xl mt-2'>READ OUR LATEST BLOGS</h1>
-            <div className='BlogPosts gap-10 flex justify-around items-center '>
-                {BlogsData.map(({image, title, desc}, index) => (
-                    <div key={index} className='BlogBody w-[25%] justify-around bg-white items-center flex flex-col'>
-                        <img className='h-64 w-64' src={image} alt="" />
-                        <h1 className='text-2xl'>{title}</h1>
-                        <p>{desc}</p>
-                    </div>
-                ))}
-            </div>
+    <section className="relative overflow-hidden bg-[#f7f3ee] py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mb-12 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#D6232E]">
+            Insights & News
+          </p>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#001541] sm:text-5xl">
+            Read Our Latest Blogs
+          </h2>
         </div>
-    </section>
-  )
-}
 
-export default Blog
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {blogPosts.map(({ image, title, desc }, index) => (
+            <article
+              key={index}
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#001541]/10 bg-white shadow-[0_20px_45px_rgba(0,21,65,0.08)] transition-transform duration-300 hover:-translate-y-1"
+            >
+              <img
+                className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                src={image}
+                alt={title}
+              />
+
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-2xl font-semibold leading-tight text-[#001541]">
+                  {title}
+                </h3>
+                <p className="mt-4 flex-1 text-base leading-7 text-[#3e4c67]">{desc}</p>
+
+                <Link
+                  href="/contact"
+                  className="mt-6 inline-flex items-center gap-2 self-start text-sm font-semibold uppercase tracking-[0.12em] text-[#D6232E] transition-colors hover:text-[#001541]"
+                >
+                  Read More
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full bg-[#D6232E] px-7 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all hover:bg-[#b91c26]"
+          >
+            Explore More Articles
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Blog;

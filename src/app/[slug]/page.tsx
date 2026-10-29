@@ -1,7 +1,12 @@
 import { notFound } from 'next/navigation'
 import { practiceAreas } from '@/app/context/practiceAreas'
+import { blogPosts } from '@/app/context/blogPosts'
 import ArmedRobbery from '@/components/PracticeAreaComponents/ArmedRobbery'
 import AssaultBattery from '@/components/PracticeAreaComponents/AssaultBattery'
+import DrugTraffickingPenaltiesBlog from '@/components/PracticeAreaComponents/DrugTraffickingPenaltiesBlog'
+import HomicideChargesBlog from '@/components/PracticeAreaComponents/HomicideChargesBlog'
+import ResistingArrestPenaltiesBlog from '@/components/PracticeAreaComponents/ResistingArrestPenaltiesBlog'
+import SuePoliceOklahomaBlog from '@/components/PracticeAreaComponents/SuePoliceOklahomaBlog'
 import CivilRights from '@/components/PracticeAreaComponents/CivilRights'
 import CriminalInvestigation from '@/components/PracticeAreaComponents/CriminalInvestigation'
 import DrugTrafficking from '@/components/PracticeAreaComponents/DrugTrafficking'
@@ -28,51 +33,82 @@ const practiceAreaComponents = {
   'other-criminal-matters': OtherCriminalMatters,
 }
 
+const blogPostComponents = {
+  'types-of-homicide-charges-oklahoma': HomicideChargesBlog,
+  'drug-trafficking-penalties-oklahoma': DrugTraffickingPenaltiesBlog,
+  'resisting-arrest-penalties-oklahoma-city': ResistingArrestPenaltiesBlog,
+  'sue-police-oklahoma': SuePoliceOklahomaBlog,
+}
+
 type PracticeAreaPageProps = {
   params: Promise<{ slug: string }>
 }
 
 export function generateStaticParams() {
-  return practiceAreas.map(({ slug }) => ({ slug }))
+  return [...practiceAreas, ...blogPosts].map(({ slug }) => ({ slug }))
 }
 
 export default async function PracticeAreaPage({ params }: PracticeAreaPageProps) {
   const { slug } = await params
   const practiceArea = practiceAreas.find((area) => area.slug === slug)
+  const blogPost = blogPosts.find((post) => post.slug === slug)
 
-  if (!practiceArea) {
+  if (!practiceArea && !blogPost) {
     notFound()
   }
 
-  const backgroundImage = practiceArea.image
-  const PracticeAreaContent = practiceAreaComponents[practiceArea.slug]
-  const isOtherCriminalMatter = practiceArea.slug === 'other-criminal-matters'
+  const page = practiceArea
+    ? {
+        type: 'practice' as const,
+        data: practiceArea,
+        Content: practiceAreaComponents[practiceArea.slug],
+      }
+    : {
+        type: 'blog' as const,
+        data: blogPost!,
+        Content: blogPostComponents[blogPost!.slug],
+      }
+  const isOtherCriminalMatter = page.type === 'practice' && page.data.slug === 'other-criminal-matters'
 
   return (
     <main className="">
       <div
-        className="PAHeader flex h-[60vh] flex-col items-center justify-center gap-6 bg-cover bg-center bg-no-repeat px-6 text-center text-white"
-        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImage})` }}
+        className="PAHeader flex h-[60vh] min-h-[420px] flex-col items-center justify-center gap-6 overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-8 text-center text-white"
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${page.data.image})` }}
       >
-        <img src="/assets/mainLogoWhite.svg" alt="Bail Bonds" className="-mt-18 h-54 w-full" />
+        <img
+          src="/assets/mainLogoWhite.svg"
+          alt="Bail Bonds"
+          className="h-40 w-auto max-w-[80vw] sm:h-48"
+        />
         <h1 className="max-w-4xl text-2xl font-bold sm:text-4xl">
-          {isOtherCriminalMatter ? 'Oklahoma Criminal Defense Lawyer' : `Oklahoma ${practiceArea.title} Lawyer`}
+          {page.type === 'blog'
+            ? page.data.title
+            : isOtherCriminalMatter
+              ? 'Oklahoma Criminal Defense Lawyer'
+              : `Oklahoma ${page.data.title} Lawyer`}
         </h1>
       </div>
 
       <div className="PAContent flex flex-col items-start gap-8 lg:flex-row">
         <div className="PAText flex-1">
-          <PracticeAreaContent />
+          <page.Content />
         </div>
 
         <div className="PASide sticky top-28 h-fit flex-col">
           <div className="ContactRedirect flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#001442] px-6 py-10 text-center shadow-xl sm:px-8">
             <img className="h-20 w-56 object-contain" src="/assets/swordRed.svg" alt="" />
             <h2 className="TextHeading text-2xl font-bold leading-tight text-white sm:text-3xl">
-              {isOtherCriminalMatter ? 'Accused of a crime in Oklahoma?' : `Accused of ${practiceArea.title} in Oklahoma?`}
+              {page.type === 'blog'
+                ? 'Need help with a criminal charge?'
+                : isOtherCriminalMatter
+                  ? 'Accused of a crime in Oklahoma?'
+                  : `Accused of ${page.data.title} in Oklahoma?`}
             </h2>
             <p className="textDesc max-w-md text-sm leading-6 text-white/80">
-              The stakes are high, but you don’t have to face the charges alone. Contact our team for a confidential review of your case.
+              {page.type === 'blog'
+                ? 'Contact our team for a confidential review of your case.'
+                : 'The stakes are high, but you don’t have to face the charges alone. Contact our team for a confidential review of your case.'}
             </p>
             <a
               href="#footer"

@@ -41,7 +41,7 @@ const Header = () => {
           <details ref={practiceAreasMenuRef} className="group relative">
             <summary className="transform scale-90 flex cursor-pointer list-none items-center gap-2 text-sm font-medium tracking-wide text-white transition-all hover:scale-100 hover:text-[#D6232E] focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
               Practice Areas
-              <span aria-hidden="true" className="text-xs transition-transform group-open:rotate-180">&#9662;</span>
+              <span aria-hidden="true" className="text-lg transition-transform group-open:rotate-180">&#9662;</span>
             </summary>
             <div className="absolute left-1/2 top-full z-20 mt-5 w-72 -translate-x-1/2 border-t-2 border-[#D6232E] bg-white p-2 text-[#001541] shadow-xl">
               {practiceAreas.map(({ slug, title }) => (
@@ -63,7 +63,7 @@ const Header = () => {
         <details ref={mobileMenuRef} className="group relative lg:hidden">
           <summary className="transform scale-90 flex cursor-pointer list-none items-center gap-2 border border-white/30 px-4 py-3 text-sm font-semibold transition-transform hover:scale-100 focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
             Menu
-            <span aria-hidden="true" className="text-xs transition-transform group-open:rotate-180">&#9662;</span>
+            <span aria-hidden="true" className="text-lg transition-transform group-open:rotate-180">&#9662;</span>
           </summary>
           <nav aria-label="Mobile navigation" className="absolute right-0 top-full z-30 mt-4 w-64 border-t-2 border-[#D6232E] bg-white p-3 text-[#001541] shadow-xl">
             <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/">Home</Link>

@@ -20,13 +20,10 @@ const Blog = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f3ee] py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-12 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#D6232E]">
-            Insights & News
-          </p>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-[#001541] sm:text-5xl">
+    <section className="BlogContainer relative overflow-hidden checkBg">
+      <div className=" mx-auto my-[10vh] max-w-7xl px-6 lg:px-10">
+        <div className="mb-8 text-center">
+          <h2 className=" text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Read Our Latest Blogs
           </h2>
         </div>
@@ -35,7 +32,7 @@ const Blog = () => {
           {blogPosts.map(({ image, title, desc }, index) => (
             <article
               key={index}
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#001541]/10 bg-white shadow-[0_20px_45px_rgba(0,21,65,0.08)] transition-transform duration-300 hover:-translate-y-1"
+              className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-[#001541]/10 bg-white shadow-[0_20px_45px_rgba(0,21,65,0.08)] transition-transform duration-300 hover:-translate-y-1"
             >
               <img
                 className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
@@ -59,15 +56,6 @@ const Blog = () => {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-[#D6232E] px-7 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all hover:bg-[#b91c26]"
-          >
-            Explore More Articles
-          </Link>
         </div>
       </div>
     </section>

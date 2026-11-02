@@ -115,7 +115,7 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
                 : 'The stakes are high, but you don’t have to face the charges alone. Contact our team for a confidential review of your case.'}
             </p>
             <a
-              href="#footer"
+              href="#contact-form"
               className="inline-flex min-h-12 transform scale-90 items-center gap-3 rounded-sm bg-[#D6232E] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-[#D6232E]/20 transition-all hover:scale-100 hover:bg-[#b91c26] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Consult Now!

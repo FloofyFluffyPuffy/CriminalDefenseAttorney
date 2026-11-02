@@ -12,8 +12,8 @@ const socialLinks = [
 const Footer = () => {
   return (
     <footer id='footer' className='FooterBG text-white'>
-      <section className='mx-auto grid max-w-7xl gap-10 px-6 py-10 sm:px-10 sm:py-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16 lg:px-12 lg:py-7'>
-        <div className='flex flex-col justify-center'>
+      <section className='mx-auto grid max-w-7xl gap-10 px-6 py-10 sm:px-10 sm:py-12 lg:grid-cols-[0.82fr_1.18fr] lg:grid-rows-[auto_1fr] lg:gap-x-16 lg:gap-y-6 lg:px-12 lg:py-7'>
+        <div className='order-1 flex flex-col justify-center lg:col-start-1 lg:row-start-1'>
           <Link href='/' aria-label='The Jones Firm home' className='mb-7 inline-block w-fit'>
             <Image
               src='/assets/mainLogoWhite.svg'
@@ -32,7 +32,10 @@ const Footer = () => {
             Fierce trial advocacy and uncompromising defense. When the stakes are highest, you need relentless fighters who never back down from a brawl in court.
           </p>
 
-          <div className='mt-8 grid gap-6 border-t border-white/10 pt-5 sm:grid-cols-2'>
+        </div>
+
+        <div className='order-3 flex flex-col lg:col-start-1 lg:row-start-2'>
+          <div className='grid gap-6 border-t border-white/10 pt-5 sm:grid-cols-2'>
             <div>
               <h2 className='mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em]'>
                 <svg aria-hidden='true' viewBox='0 0 24 24' fill='none' className='h-4 w-4 text-[#D6232E]' stroke='currentColor' strokeWidth='2'>
@@ -102,7 +105,7 @@ const Footer = () => {
           </nav>
         </div>
 
-        <div className='rounded-xl border border-white/10 bg-[#0a1225]/90 p-5 shadow-2xl shadow-black/25 sm:p-8'>
+        <div id='contact-form' className='order-2 scroll-mt-28 rounded-xl border border-white/10 bg-[#0a1225]/90 p-5 shadow-2xl shadow-black/25 sm:p-8 lg:col-start-2 lg:row-span-2 lg:row-start-1'>
           <h2 className='text-2xl font-bold leading-tight sm:text-[28px]'>Contact The Jones Firm, PLLC</h2>
           <p className='mt-1 text-xs leading-5 text-white/65 sm:text-[13px]'>
             Speak immediate with our legal team for free consultation.

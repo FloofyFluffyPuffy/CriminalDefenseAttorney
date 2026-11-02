@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import { practiceAreas } from '@/app/context/practiceAreas'
 import { blogPosts } from '@/app/context/blogPosts'
 import ArmedRobbery from '@/components/PracticeAreaComponents/ArmedRobbery'
@@ -73,15 +74,18 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
   return (
     <main className="">
       <div
-        className="PAHeader flex h-[60vh] min-h-[420px] flex-col items-center justify-center gap-6 overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-8 text-center text-white"
+        className="PAHeader flex h-[60vh] min-h-[420px] flex-col items-center justify-center gap-6 overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-8 text-center text-white max-[640px]:h-[60svh] max-[640px]:min-h-[360px] max-[640px]:gap-5 max-[640px]:px-4"
         style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${page.data.image})` }}
       >
-        <img
+        <Image
           src="/assets/mainLogoWhite.svg"
           alt="Bail Bonds"
-          className="h-40 w-auto max-w-[80vw] sm:h-48"
+          width={148}
+          height={64}
+          priority
+          className="h-32 w-auto max-w-[80vw] sm:h-48"
         />
-        <h1 className="max-w-4xl text-2xl font-bold sm:text-4xl">
+        <h1 className="max-w-4xl text-2xl font-bold leading-tight sm:text-4xl">
           {page.type === 'blog'
             ? page.data.title
             : isOtherCriminalMatter
@@ -90,14 +94,14 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
         </h1>
       </div>
 
-      <div className="PAContent flex flex-col items-start gap-8 lg:flex-row">
-        <div className="PAText flex-1">
+      <div className="PAContent">
+        <div className="PAText">
           <page.Content />
         </div>
 
-        <div className="PASide sticky top-28 h-fit flex-col">
+        <div className="PASide">
           <div className="ContactRedirect flex flex-col items-center justify-center gap-5 rounded-2xl bg-[#001442] px-6 py-10 text-center shadow-xl sm:px-8">
-            <img className="h-20 w-56 object-contain" src="/assets/swordRed.svg" alt="" />
+            <Image className="h-20 w-56 object-contain" src="/assets/swordRed.svg" alt="" width={224} height={80} />
             <h2 className="TextHeading text-2xl font-bold leading-tight text-white sm:text-3xl">
               {page.type === 'blog'
                 ? 'Need help with a criminal charge?'

@@ -3,14 +3,61 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { blogPosts } from "@/app/context/blogPosts";
 
 const Blog = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const currentSlug = pathname.split("/").filter(Boolean).at(-1);
   const visiblePosts = blogPosts
     .filter(({ slug }) => slug !== currentSlug)
     .slice(0, 3);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    const mobileViewport = window.matchMedia("(max-width: 767px)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!carousel) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      if (
+        !mobileViewport.matches ||
+        reducedMotion.matches ||
+        document.visibilityState !== "visible"
+      ) {
+        return;
+      }
+
+      const cards = Array.from(carousel.children).filter(
+        (card): card is HTMLElement => card instanceof HTMLElement,
+      );
+      if (cards.length < 2) {
+        return;
+      }
+
+      const carouselLeft = carousel.getBoundingClientRect().left;
+      const nextCard = cards.find(
+        (card) =>
+          carousel.scrollLeft + card.getBoundingClientRect().left - carouselLeft >
+          carousel.scrollLeft + 1,
+      );
+
+      carousel.scrollTo({
+        left: nextCard
+          ? carousel.scrollLeft +
+            nextCard.getBoundingClientRect().left -
+            carouselLeft
+          : 0,
+        behavior: "smooth",
+      });
+    }, 3000);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   return (
     <section className="BlogContainer relative overflow-hidden checkBg">
@@ -21,12 +68,18 @@ const Blog = () => {
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div
+          ref={carouselRef}
+          aria-label="Latest blog posts"
+          className="blog-carousel grid auto-cols-[100%] grid-flow-col snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain scroll-smooth pb-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:grid-flow-row md:auto-cols-auto md:grid-cols-2 md:gap-8 md:overflow-visible md:pb-0 xl:grid-cols-3"
+          role="region"
+          tabIndex={0}
+        >
           {visiblePosts.map(({ slug, image, title, desc }) => (
             <Link
               key={slug}
               href={`/${slug}`}
-              className="group block h-full rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="group block h-full min-w-0 snap-start rounded-2xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-[#001541]/10 bg-white shadow-[0_20px_45px_rgba(0,21,65,0.08)]">
                 <Image

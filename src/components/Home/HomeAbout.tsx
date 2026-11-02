@@ -67,16 +67,16 @@ const HomeAbout = () => {
             </div>
 
             {/* Button + Social Icons Container */}
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+            <div className="mt-4 flex flex-nowrap items-center justify-between gap-2 sm:flex-wrap sm:gap-4">
               <Link
                 href="/about"
-                className="transform scale-90 inline-flex min-h-11 items-center bg-[#D6232E] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:scale-100 hover:bg-white hover:text-[#001541] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="inline-flex min-h-9 shrink-0 transform scale-90 items-center whitespace-nowrap bg-[#D6232E] px-2.5 py-2 text-[10px] font-semibold text-white transition-all hover:scale-100 hover:bg-white hover:text-[#001541] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:min-h-11 sm:px-5 sm:py-2.5 sm:text-sm"
               >
                 Learn More About Ron Jones
               </Link>
 
               {/* Social Media Icons */}
-              <div className="flex items-center gap-4">
+              <div className="flex shrink-0 items-center gap-0.5 rounded-lg border border-white/10 bg-white/10 px-1.5 py-1.5 backdrop-blur-sm sm:gap-4 sm:px-3 sm:py-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
@@ -91,7 +91,7 @@ const HomeAbout = () => {
                       alt={`${social.name} Icon`}
                       width={24}
                       height={24}
-                      className="h-12 w-12 object-contain"
+                      className="h-5 w-5 object-contain sm:h-12 sm:w-12"
                     />
                   </a>
                 ))}

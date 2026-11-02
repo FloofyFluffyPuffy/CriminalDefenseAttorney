@@ -74,7 +74,7 @@ export default async function PracticeAreaPage({ params }: PracticeAreaPageProps
   return (
     <main className="">
       <div
-        className="PAHeader flex h-[60vh] min-h-[420px] flex-col items-center justify-center gap-6 overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-8 text-center text-white max-[640px]:h-[60svh] max-[640px]:min-h-[360px] max-[640px]:gap-5 max-[640px]:px-4"
+        className={`PAHeader PAHeader--${page.type === 'practice' ? page.data.slug : 'blog'} flex h-[60vh] min-h-[420px] flex-col items-center justify-center gap-6 overflow-hidden bg-cover bg-center bg-no-repeat px-6 py-8 text-center text-white max-[640px]:h-[60svh] max-[640px]:min-h-[360px] max-[640px]:gap-5 max-[640px]:px-4`}
         style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${page.data.image})` }}
       >
         <Image

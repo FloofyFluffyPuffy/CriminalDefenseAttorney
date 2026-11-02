@@ -75,6 +75,12 @@ html {
   background-position: center;
 }
 
+@media (max-width: 640px) {
+  .PAHeader--armed-robbery {
+    background-position: center, 20% center;
+  }
+}
+
 .HomePractices {
   background-image: url('/assets/flippedwalking.png');
   background-size: cover;
@@ -94,7 +100,7 @@ html {
     background-image:
       linear-gradient(rgba(242, 220, 198, 0.84), rgba(242, 220, 198, 0.84)),
       url('/assets/flippedwalking.png');
-    background-position: center;
+    background-position: 25% center;
     padding: 3rem 1.5rem;
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { practiceAreas } from "@/app/context/practiceAreas";
@@ -11,17 +11,17 @@ const Header = () => {
   const practiceAreasMenuRef = useRef<HTMLDetailsElement>(null);
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
   const mobilePracticeAreasMenuRef = useRef<HTMLDetailsElement>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (scrollingDown) {
+    if (scrollingDown && !isMobileMenuOpen) {
       practiceAreasMenuRef.current?.removeAttribute("open");
-      mobileMenuRef.current?.removeAttribute("open");
       mobilePracticeAreasMenuRef.current?.removeAttribute("open");
     }
-  }, [scrollingDown]);
+  }, [isMobileMenuOpen, scrollingDown]);
 
   return (
-    <header className={`sticky top-0 z-50 border-b border-white/10 bg-[#001541] text-white transition-transform duration-300 ${scrollingDown ? "-translate-y-full" : "translate-y-0"}`}>
+    <header className={`sticky top-0 z-50 border-b border-white/10 bg-[#001541] text-white transition-transform duration-300 ${scrollingDown && !isMobileMenuOpen ? "-translate-y-full" : "translate-y-0"}`}>
       <div className="mx-auto flex min-h-24 max-w-7xl items-center justify-between gap-8 px-6 py-4 lg:px-10">
         <Link href="/" aria-label="Bail Bonds home" className="shrink-0">
           <Image
@@ -60,17 +60,25 @@ const Header = () => {
           </Link>
         </nav>
 
-        <details ref={mobileMenuRef} className="group relative lg:hidden">
-          <summary className="transform scale-90 flex cursor-pointer list-none items-center gap-2 border border-white/30 px-4 py-3 text-sm font-semibold transition-transform hover:scale-100 focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
-            Menu
-            <span aria-hidden="true" className="text-lg transition-transform group-open:rotate-180">&#9662;</span>
+        <details
+          ref={mobileMenuRef}
+          className="static lg:hidden"
+          onToggle={(event) => setIsMobileMenuOpen(event.currentTarget.open)}
+        >
+          <summary
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            className="flex h-11 w-11 cursor-pointer list-none flex-col items-center justify-center gap-[5px] rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white [&::-webkit-details-marker]:hidden"
+          >
+            <span aria-hidden="true" className="h-0.5 w-6 rounded bg-white" />
+            <span aria-hidden="true" className="h-0.5 w-6 rounded bg-white" />
+            <span aria-hidden="true" className="h-0.5 w-6 rounded bg-white" />
           </summary>
-          <nav aria-label="Mobile navigation" className="absolute right-0 top-full z-30 mt-4 w-64 border-t-2 border-[#D6232E] bg-white p-3 text-[#001541] shadow-xl">
+          <nav aria-label="Mobile navigation" className="absolute left-0 right-0 top-full z-30 w-full border-t-2 border-[#D6232E] bg-white p-3 text-[#001541] shadow-xl">
             <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/">Home</Link>
             <details ref={mobilePracticeAreasMenuRef} className="group/practice">
-              <summary className="transform scale-90 flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100 [&::-webkit-details-marker]:hidden">
+              <summary className="transform scale-90 flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#D6232E] [&::-webkit-details-marker]:hidden">
                 Practice Areas
-                <span aria-hidden="true" className="text-xs transition-transform group-open/practice:rotate-180">&#9662;</span>
+                <span aria-hidden="true" className="text-lg transition-transform group-open/practice:rotate-180">&#9662;</span>
               </summary>
               <div className="border-l-2 border-[#D6232E] pl-3">
                 {practiceAreas.map(({ slug, title }) => (

@@ -3,15 +3,25 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { practiceAreas } from "@/app/context/practiceAreas";
 import { useContextData } from "@/app/context/Provider";
 
 const Header = () => {
   const { scrollingDown } = useContextData();
+  const pathname = usePathname();
   const practiceAreasMenuRef = useRef<HTMLDetailsElement>(null);
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
   const mobilePracticeAreasMenuRef = useRef<HTMLDetailsElement>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => {
+    mobileMenuRef.current?.removeAttribute("open");
+    mobilePracticeAreasMenuRef.current?.removeAttribute("open");
+    setIsMobileMenuOpen(false);
+  };
+  const isCurrentPage = (href: string) =>
+    pathname === href || (href !== "/" && pathname === `${href}/`);
 
   useEffect(() => {
     if (scrollingDown && !isMobileMenuOpen) {
@@ -74,7 +84,14 @@ const Header = () => {
             <span aria-hidden="true" className="h-0.5 w-6 rounded bg-white" />
           </summary>
           <nav aria-label="Mobile navigation" className="absolute left-0 right-0 top-full z-30 w-full border-t-2 border-[#D6232E] bg-white p-3 text-[#001541] shadow-xl">
-            <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/">Home</Link>
+            <Link
+              aria-current={isCurrentPage("/") ? "page" : undefined}
+              className={`transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] active:text-[#D6232E] focus-visible:scale-100 ${isCurrentPage("/") ? "text-[#D6232E]" : ""}`}
+              href="/"
+              onClick={closeMobileMenu}
+            >
+              Home
+            </Link>
             <details ref={mobilePracticeAreasMenuRef} className="group/practice">
               <summary className="transform scale-90 flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#D6232E] [&::-webkit-details-marker]:hidden">
                 Practice Areas
@@ -82,16 +99,32 @@ const Header = () => {
               </summary>
               <div className="border-l-2 border-[#D6232E] pl-3">
                 {practiceAreas.map(({ slug, title }) => (
-                  <Link key={slug} className="block px-4 py-2 text-sm hover:text-[#D6232E]" href={`/${slug}`}>
+                  <Link
+                    key={slug}
+                    aria-current={isCurrentPage(`/${slug}`) ? "page" : undefined}
+                    className={`block px-4 py-2 text-sm transition-colors hover:text-[#D6232E] active:text-[#D6232E] ${isCurrentPage(`/${slug}`) ? "text-[#D6232E]" : ""}`}
+                    href={`/${slug}`}
+                    onClick={closeMobileMenu}
+                  >
                     {title}
                   </Link>
                 ))}
               </div>
             </details>
-            <Link className="transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] focus-visible:scale-100" href="/about">
+            <Link
+              aria-current={isCurrentPage("/about") ? "page" : undefined}
+              className={`transform scale-90 block px-4 py-3 text-sm font-medium transition-all hover:scale-100 hover:bg-[#f4f5f7] hover:text-[#D6232E] active:text-[#D6232E] focus-visible:scale-100 ${isCurrentPage("/about") ? "text-[#D6232E]" : ""}`}
+              href="/about"
+              onClick={closeMobileMenu}
+            >
               About
             </Link>
-            <Link className="transform scale-90 mt-2 flex items-center gap-2 bg-[#D6232E] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#D6232E]/20 transition-all hover:scale-100 hover:bg-[#b91c26] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" href="/contact">
+            <Link
+              aria-current={isCurrentPage("/contact") ? "page" : undefined}
+              className="transform scale-90 mt-2 flex items-center gap-2 bg-[#D6232E] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#D6232E]/20 transition-all hover:scale-100 hover:bg-[#b91c26] focus-visible:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              href="/contact"
+              onClick={closeMobileMenu}
+            >
               <Image src="/assets/phone.svg" alt="" width={18} height={18} className="h-[18px] w-[18px]" />
               Call Now
             </Link>

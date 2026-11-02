@@ -37,18 +37,22 @@ html {
 @media (max-width: 767px) {
   .HomeHero {
     background-position: 76% center;
+    margin-bottom: -1px;
+  }
+
+  .HeroPatternFade {
+    position: absolute;
+    inset: 0;
+    display: block;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 30%, #000 72%);
+    mask-image: linear-gradient(to bottom, transparent 30%, #000 72%);
+    pointer-events: none;
   }
 
   .HeroContent {
     justify-content: flex-end;
     padding-bottom: 2rem;
     color: #ffffff;
-    background: linear-gradient(
-      to bottom,
-      transparent 32%,
-      rgba(0, 20, 66, 0.78) 68%,
-      #001442 100%
-    );
   }
 }
 
@@ -86,6 +90,7 @@ html {
 
 @media (max-width: 640px) {
   .HomePractices {
+    margin-top: -16px;
     background-image:
       linear-gradient(rgba(242, 220, 198, 0.84), rgba(242, 220, 198, 0.84)),
       url('/assets/flippedwalking.png');

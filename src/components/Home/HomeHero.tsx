@@ -7,7 +7,8 @@ const HomeHero = () => {
   return (
     <section className='HomeHero relative h-screen w-full scale-x-[-1] overflow-hidden max-[767px]:h-[calc(100svh-6rem)] max-[767px]:min-h-[640px] max-[767px]:scale-x-100'>
       {/* Un-flip the inner content container so text and images render normally */}
-      <div className='flex h-full w-full scale-x-[-1] justify-end max-[767px]:scale-x-100'>
+      <div aria-hidden='true' className='HeroPatternFade checkBg' />
+      <div className='relative z-10 flex h-full w-full scale-x-[-1] justify-end max-[767px]:scale-x-100'>
         <div className='HeroContent flex h-full w-full flex-col items-center justify-center max-[767px]:gap-2 max-[767px]:px-4 max-[767px]:text-center lg:w-[50%]'>
           <picture className='contents'>
             <source media='(max-width: 767px)' srcSet='/assets/mainLogoWhite.svg' />
